@@ -1,0 +1,13 @@
+import model.Player;
+
+class Game {
+    private Player player = new Player();
+    private Dealer dealer = new Dealer();
+    
+    
+    
+    
+    //Meetodo comparar Hand Se o dealer tiver um 10, um valete, uma dama ou um rei como carta aberta, será possível que ele tenha um Blackjack. Neste
+   // caso, a mão do jogador perderá, exceto se ele tiver um Blackjack;
+   // Caso o dealer tenha um Blackjack as ap
+}

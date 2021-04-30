@@ -1,0 +1,6 @@
+import java.util.ArrayList;
+public class Mao {
+	private ArrayList<Integer> Mao_Cartas = new ArrayList<Integer>();
+	
+	
+}

@@ -1,0 +1,136 @@
+import java.util.Iterator;
+import java.util.Random;
+import java.util.NoSuchElementException;
+ class Baralho {
+	 private final Carta[] Cartas;
+	   private int top;
+
+	   /**
+	    * Construct a Baralho. The Cartas will start out in an unspecified but
+	    * deterministic order - you must call shuffle() yourself.
+	    */
+	   public Baralho()
+	   {
+	      Cartas = new Carta[Carta.getSuits().length * (Carta.getMaxRank() - Carta.getMinRank() + 1)];
+	      refresh();
+	   }
+
+	   /**
+	    * Repopulate the Baralho with a full set of Cartas.
+	    */
+	   public void refresh()
+	   {
+	      Carta.Suit[] suits = Carta.getSuits();
+	      int min_rank = Carta.getMinRank();
+	      int max_rank = Carta.getMaxRank();
+
+	      int i = 0;
+	      for (Carta.Suit suit : suits)
+	         for (int rank = min_rank; rank <= max_rank; rank++)
+	            Cartas[i++] = new Carta(rank, suit);
+
+	      top = Cartas.length - 1;
+	      assert Cartas[top] != null;
+	   }
+
+	   /**
+	    * Shuffle the Baralho, leaving the Cartas in a random order.
+	    */
+	   public void shuffle()
+	   {
+	      // Collections.shuffle(Arrays.asArray(Cartas));
+
+	      Random rng = new Random();
+
+	      for (int i = Cartas.length - 1; i > 0; i--) {
+	         // Swap the i-th Carta with a random one
+	         int j = rng.nextInt(i + 1);
+	         Carta tmp = Cartas[j];
+	         Cartas[j] = Cartas[i];
+	         Cartas[i] = tmp;
+	      }
+	   }
+
+	   /**
+	    * Return true if the Baralho is empty.
+	    */
+	   public boolean empty()
+	   {
+	      return top < 0;
+	   }
+
+	   /**
+	    * Take a Carta from the Baralho and return it.
+	    */
+	   public Carta takeCarta()
+	   {
+	      if (empty())
+	         throw new IllegalStateException("Can't deal from an empty Baralho.");
+	      return Cartas[top--];
+	   }
+
+	   /**
+	    * Print the current state of the Baralho.
+	    */
+	   public void print()
+	   {
+	      if (empty()) {
+	         System.out.println("The Baralho is empty.");
+	         return;
+	      }
+
+	      System.out.println("The current Baralho:");
+	      for (Carta Carta : this)
+	         System.out.println("  " + Carta);
+	   }
+
+	   /**
+	    * Return an iterator of the Baralho's Cartas.
+	    *
+	    * The behavior is unspecified if you modify the Baralho (including taking a
+	    * Carta) during the lifetime of an iterator.
+	    */
+	   public Iterator<Carta> iterator()
+	   {
+	      return new Iterator<Carta>()
+	      {
+	         private int cursor = top;
+
+	         public boolean hasNext()
+	         {
+	            return cursor >= 0;
+	         }
+
+	         public Carta next()
+	         {
+	            if (hasNext())
+	               return Cartas[cursor--];
+	            throw new NoSuchElementException();
+	         }
+
+	         public void remove()
+	         {
+	            throw new UnsupportedOperationException();
+	         }
+	      };
+	   }
+
+	   public static void main(String[] args)
+	   {
+	      Baralho Baralho = new Baralho();
+
+	      System.out.println("Before shuffling:");
+	      Baralho.print();
+	      System.out.println();
+
+	      System.out.println("After shuffling:");
+	      Baralho.shuffle();
+	      Baralho.print();
+	      System.out.println();
+
+	      System.out.println("After dealing every Carta:");
+	      for (int i = 0; i < 52; i++)
+	         Baralho.takeCarta();
+	      Baralho.print();
+	   }
+}
