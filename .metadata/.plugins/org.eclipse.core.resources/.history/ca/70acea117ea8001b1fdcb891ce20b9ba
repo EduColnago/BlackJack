@@ -1,0 +1,75 @@
+
+public class Ficha {
+	private int F_cem;
+	private int F_cinquenta;
+	private int F_vinte;
+	private int F_dez;
+	private int F_cinco;
+	private int F_um;
+	
+	
+	public Ficha(){ 
+	  F_cem =2;
+	  F_cinquenta=2;
+	  F_vinte=5;
+	  F_dez=5;
+	  F_cinco=8;
+	  F_um=10;
+	}
+
+	public void aposta(int ficha) {
+		if(ficha==100) {
+			this.F_cem-=1;
+		}else if(ficha==50){
+			this.F_cinquenta-=1;
+		}
+		else if(ficha==20){
+			this.F_vinte-=1;
+		}
+		else if(ficha==10){
+			this.F_dez-=1;
+		}
+		else if(ficha==5){
+			this.F_cinco-=1;
+		}
+		else if(ficha==1){
+			this.F_um-=1;
+		}
+		else {
+			//print valor invalido
+		}
+	}
+	
+	public void Ganha_Ficha(int ficha) {
+		if(ficha==100) {
+			this.F_cem+=1;
+		}else if(ficha==50){
+			this.F_cinquenta+=1;
+		}
+		else if(ficha==20){
+			this.F_vinte+=1;
+		}
+		else if(ficha==10){
+			this.F_dez+=1;
+		}
+		else if(ficha==5){
+			this.F_cinco+=1;
+		}
+		else if(ficha==1){
+			this.F_um+=1;
+		}
+		else {
+			//print valor invalido
+		}
+	}
+
+	public void Perde_Ficha(Ficha aposta) {
+		this.F_cem-=aposta.F_cem;
+		this.F_cinquenta-=aposta.F_cinquenta;
+		this.F_vinte-=aposta.F_vinte;
+		this.F_dez-=aposta.F_dez;
+		this.F_cinco-=aposta. F_cinco;
+		this.F_um-=aposta.F_um;
+		
+	}		
+}

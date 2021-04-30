@@ -1,0 +1,12 @@
+
+public class Player {
+  private Hand;
+  private Ficha;
+  
+  
+  
+//metodo pedir carta
+//metodo aposta min 20 max 100
+   
+  
+}

@@ -1,0 +1,13 @@
+
+	class Player {
+    
+		private Ficha ficha= new Ficha();
+		private Aposta aposta = new Aposta();
+         
+		
+ 
+		  
+		  
+
+  
+}

@@ -1,0 +1,17 @@
+import java.util.ArrayList;
+
+	class Aposta {
+	
+	private ArrayList<Integer> aposta = new ArrayList<Integer>();
+
+	public void adiciona_aposta(int ficha) {
+		aposta.add(ficha);	
+	}
+	
+	public void remove_aposta(int ficha) {
+		int lastElement = aposta.size()-1;
+		if(aposta!=null) {
+			aposta.remove(lastElement);
+		}
+	}
+}

@@ -1,0 +1,32 @@
+
+public class Ficha {
+	private int F_cem;
+	private int F_cinquenta;
+	private int F_vinte;
+	private int F_dez;
+	private int F_cinco;
+	private int F_um;
+	
+	public Ficha(){ 
+	  F_cem =200;
+	  F_cinquenta=100;
+	  F_vinte=100;
+	  F_dez=50;
+	  F_cinco=40;
+	  F_um=10;
+	}
+
+	public void Aposta_Ficha(int aposta) {
+		
+		
+	}
+	
+	
+	
+	public void Retira_Ficha() {
+		
+		
+	}
+	
+	
+}

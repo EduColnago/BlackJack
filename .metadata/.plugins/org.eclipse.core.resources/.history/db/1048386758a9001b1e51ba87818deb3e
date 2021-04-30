@@ -1,0 +1,17 @@
+
+	class Player {
+    
+		private Ficha ficha= new Ficha();
+		private Aposta aposta = new Aposta();
+         public void aaa() {
+        	 ficha.
+         }
+
+ 
+		  
+		  
+//metodo pedir carta
+//metodo aposta min 20 max 100
+   
+  
+}

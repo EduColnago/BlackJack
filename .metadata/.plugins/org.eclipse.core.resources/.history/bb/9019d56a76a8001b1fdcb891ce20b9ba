@@ -1,0 +1,14 @@
+
+public class Player {
+    
+  public Ficha ficha= new Ficha();
+  public Ficha aposta= new Ficha();
+
+  ficha.f_1+=
+		  
+		  
+//metodo pedir carta
+//metodo aposta min 20 max 100
+   
+  
+}

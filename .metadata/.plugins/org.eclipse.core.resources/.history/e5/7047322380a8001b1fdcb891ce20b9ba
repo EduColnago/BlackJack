@@ -1,0 +1,7 @@
+import java.util.ArrayList;
+
+public class Aposta {
+	
+	private ArrayList<Integer> aposta = new ArrayList<Integer>();
+
+}
