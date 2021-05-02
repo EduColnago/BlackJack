@@ -2,8 +2,6 @@ package model;
 import java.util.Iterator;
 import java.util.Random;
 
-import model.Carta.Naipe;
-
 import java.util.NoSuchElementException;
  class Baralho {
 	 private final Carta[] cards;

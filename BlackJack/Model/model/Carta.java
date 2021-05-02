@@ -23,7 +23,7 @@ import java.util.Objects;
 		   public Carta(int rank, Naipe suit)
 		   {
 		      setRank(rank);
-		      setSuit(suit);
+		      setNaipe(suit);
 		   }
 
 		   /**
@@ -49,7 +49,7 @@ import java.util.Objects;
 		   /**
 		    * Return the card's suit.
 		    */
-		   public Naipe getSuit()
+		   public Naipe getNaipe()
 		   {
 		      return suit;
 		   }
@@ -57,7 +57,7 @@ import java.util.Objects;
 		   /**
 		    * Set the card's suit, with input validation.
 		    */
-		   public void setSuit(Naipe suit)
+		   public void setNaipe(Naipe suit)
 		   {
 		      if (suit == null)
 		         throw new RuntimeException("Naipe must be non-null");
@@ -70,7 +70,7 @@ import java.util.Objects;
 		      return String.format("%s[rank=%d, suit=%s]",
 		                           getClass().getSimpleName(),
 		                           getRank(),
-		                           getSuit().name());
+		                           getNaipe().name());
 		   }
 
 		   @Override
@@ -82,13 +82,13 @@ import java.util.Objects;
 		         return true;
 
 		      Carta that = (Carta)obj;
-		      return that.getRank() == getRank() && that.getSuit() == getSuit();
+		      return that.getRank() == getRank() && that.getNaipe() == getNaipe();
 		   }
 
 		   @Override
 		   public int hashCode()
 		   {
-		      return Objects.hash(getRank(), getSuit());
+		      return Objects.hash(getRank(), getNaipe());
 		   }
 
 		   /**
