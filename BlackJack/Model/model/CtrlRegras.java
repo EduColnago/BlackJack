@@ -1,9 +1,10 @@
 package model;
 
-public class CtrlRegras {
+class CtrlRegras {
 	private Baralho baralho;
 	private Dealer dealer;
-	private int vez =0;
+	private int number_of_player=0;
+	private int vez = 0;
 	private Player[] player= new Player[4];
 	
 	public CtrlRegras() {
@@ -11,16 +12,22 @@ public class CtrlRegras {
 		dealer = new Dealer();
 	}
 	
-	public void criaJogador(String nome,int qtd) {
-		player[qtd]= new Player(nome);
+	public int criaJogador(String[] jogadores) {
+		for(int i=0;i<jogadores.length;i++) {
+			player[i]= new Player(jogadores[i]);
+		}
+		return number_of_player+=jogadores.length;
 	}
 	
-	public void setVez(int vez,int max) {//pensar melhor na funcao set vez**************************************************************************
-		if (vez==max) {
-			while(dealer.mao.Conta_Pontos()<17 && dealer.mao.Conta_Pontos()!=21) {
+	public void setVez(int vez) {
+		if (vez==number_of_player) {
+			while(dealer.mao.Conta_Pontos()<17 && dealer.mao.Conta_Pontos()<=21) {
 				Hit("D");
 			}
 			compara_player_Dealer();
+			for(Player item : player) {
+				item.mao.zera_mao();
+			}
 			vez=0;
 		}
 		else {
@@ -61,7 +68,7 @@ public class CtrlRegras {
 	
 	public void Stand() {
 		if(player[vez].ficha.Aposta_min_max()!=-1) {
-			setVez(vez,2);//ageitar  funcao de mudar a vez isso&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+			setVez(vez);
 		}
 		
 	}

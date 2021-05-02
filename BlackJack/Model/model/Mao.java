@@ -5,8 +5,6 @@ import java.util.ArrayList;
 	
 	
 	public int Conta_Pontos() {	
-	    // retorna o valor de pontos na sua mao e fazendo o melhror caso para o as
-		//para chegar o mais perto de 21
 		int pontos=0;
 		ArrayList<Carta> as = new ArrayList<Carta>();
 		for(Carta item : Mao_Cartas) {
@@ -14,20 +12,34 @@ import java.util.ArrayList;
 				as.add(item);
 			}
 			else {
+				if(item.getRank()>=11) {
+					pontos+=10;
+				}
+				else {
 				pontos+=item.getRank();
+				}
 			}
 		}
-		
-		for(Carta item :as) {
-			int qtd=as.size();
-			if(pontos>=21||pontos==21&&qtd>1) {
-				return -1;
+		if(as.size()>=1) {
+			for(Carta item : as) {				
+				if(pontos<12) {
+					pontos+=11;
+				}
+				else {
+					pontos+=item.getRank();
+				}
+				
 			}
-			
 		}
-		
-		
+		if(pontos>21) {
+			return -1;
+		}
 	return pontos;
+	}
+	
+	public ArrayList<Carta> zera_mao() {
+		return Mao_Cartas = new ArrayList<Carta>();
+		
 	}
 }
 
