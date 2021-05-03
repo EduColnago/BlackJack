@@ -1,9 +1,0 @@
-
- class Dealer {
-
-	//private Hand;
-	public Ficha ficha= new Ficha("D");
-	private Mao mao = new Mao();
-	
-	
-}

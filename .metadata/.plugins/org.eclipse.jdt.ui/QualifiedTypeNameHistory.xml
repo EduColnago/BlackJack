@@ -5,4 +5,11 @@
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="model.Eduardo"/>
+    <fullyQualifiedTypeName name="model.Mao"/>
+    <fullyQualifiedTypeName name="model.Carta.Naipe"/>
+    <fullyQualifiedTypeName name="junit.framework.Assert"/>
+    <fullyQualifiedTypeName name="model.Ficha"/>
+    <fullyQualifiedTypeName name="model.Baralho"/>
+    <fullyQualifiedTypeName name="model.Carta"/>
+    <fullyQualifiedTypeName name="org.junit.Assert"/>
 </qualifiedTypeNameHistroy>
